@@ -1,0 +1,4 @@
+node_modules
+public/bundles.js
+public/bundles.js.map
+npm-debug.log
