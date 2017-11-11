@@ -7,7 +7,7 @@ Author.hasMany(Message);
 Message.belongsTo(Author);
 Channel.hasMany(Message, {
   onDelete: 'cascade',
-  hooke: true,
+  hooks: true,
 });
 Message.belongsTo(Channel);
 

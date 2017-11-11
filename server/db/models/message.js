@@ -8,5 +8,5 @@ const Message = db.define('message', {
   }
 });
 
-module.exports = message;
+module.exports = Message;
 
