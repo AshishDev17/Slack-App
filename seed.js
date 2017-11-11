@@ -136,3 +136,33 @@ const messages = [
     channelId: getChannelId(),
   },
 ];
+
+const seed = () => {
+  return Promise.all(authors.map(author => Author.create(author))
+  )
+  .then(() => Promise.all(channels.map(channel => Channel.create(channel))
+  ))
+  .then(() => Promise.all(messages.map(message => Message.create(message))
+  ))
+};
+
+const main = () => {
+  console.log('Syncing db....');
+
+  db.sync({force: true})
+    .then(() => {
+      console.log('Seeding db....');
+      return seed();
+    })
+    .catch(err => {
+      console.log('Error while seeding');
+      console.log(err.stack);
+    })
+    .then(() => {
+      console.log('Closing db connection....');
+      db.close();
+      return null;
+    })
+};
+
+main();
