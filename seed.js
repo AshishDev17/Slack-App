@@ -60,9 +60,9 @@ const channels = [
   },
 ];
 
-const getAuthorId = () => Math.floor(Math.random() * authors.length - 1) + 1;
+const getAuthorId = () => Math.floor(Math.random() * (authors.length - 1)) + 1;
 
-const getChannelId = () => Math.floor(Math.random() * channels.length - 1) + 1;
+const getChannelId = () => Math.floor(Math.random() * (channels.length - 1)) + 1;
 
 const messages = [
   {

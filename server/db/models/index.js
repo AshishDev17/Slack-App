@@ -1,6 +1,6 @@
-const Author = require('./models/author');
-const Message = require('./models/message');
-const Channel = require('./models/channel');
+const Author = require('./author');
+const Message = require('./message');
+const Channel = require('./channel');
 
 
 Author.hasMany(Message);
