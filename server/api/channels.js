@@ -19,8 +19,18 @@ router.get('/:channelId', (req, res, next) => {
 
 //POST api/channels
 router.post('/', (req, res, next) => {
-  console.log('req.body ', req.body);
   Channel.create(req.body)
     .then(channel => res.json(channel))
     .catch(next);
+});
+
+//DELETE api/channels/:channelId
+router.delete('/:channelId', (req, res, next) => {
+  const id = req.params.channelId;
+
+  Channel.destroy({
+    where: {id}
+  })
+  .then(() => res.status(204).end())
+  .catch(next);
 });
