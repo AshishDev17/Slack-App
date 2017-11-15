@@ -6,7 +6,8 @@ const Channel = db.define('channel', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
-  }
+    unique: true,
+  },
 });
 
 

@@ -2,7 +2,7 @@
 
 const {expect} = require('chai');
 const db = require('../../server/db');
-const {Author} = require('../../server/db/models');
+const Author = db.model('author');
 
 describe('Author Model', () => {
   beforeEach(() => {
