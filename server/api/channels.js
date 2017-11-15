@@ -8,3 +8,11 @@ router.get('/', (req, res, next) => {
     .then(channels => res.json(channels))
     .catch(next);
 });
+
+
+//GET api/channels/:channelId
+router.get('/:channelId', (req, res, next) => {
+  Channel.findById(req.params.channelId)
+    .then(channel => res.json(channel))
+    .catch(next);
+});

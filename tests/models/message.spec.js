@@ -23,7 +23,7 @@ describe('Message Model', () => {
       });
     });
 
-    it(`should create message with content 'Hello World!'`, () => {
+    it.only(`should create message with content 'Hello World!'`, () => {
       expect(msg.content).to.be.equal('Hello World!');
     })
   });

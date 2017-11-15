@@ -38,5 +38,5 @@ db.sync()
     console.log('DB synced');
   });
 
-//handle sockets
+
 
