@@ -9,3 +9,11 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+
+//POST api/messages
+router.post('/', (req, res, next) => {
+  Message.create(req.body)
+    .then(message => res.json(message))
+    .catch(next);
+});
+
