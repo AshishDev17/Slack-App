@@ -17,3 +17,15 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+//DELETE api/messages/:messageId
+router.delete('/:messageId', (req, res, next) => {
+  const id = req.params.messageId;
+
+  Message.destroy({
+    where: {
+      id,
+    }
+  })
+  .then(() => res.status(204).end())
+  .catch(next);
+});
