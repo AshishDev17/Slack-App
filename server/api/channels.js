@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Channel} = require('../db/models');
+const {Channel, Message} = require('../db/models');
 module.exports = router;
 
 //GET api/channels
@@ -15,6 +15,19 @@ router.get('/:channelId', (req, res, next) => {
   Channel.findById(req.params.channelId)
     .then(channel => res.json(channel))
     .catch(next);
+});
+
+//GET api/channels/:channelId/messages
+router.get('/:channelId/messages', (req, res, next) => {
+  const channelId = req.params.channelId;
+
+  Message.findAll({
+    where: {
+      channelId,
+    }
+  })
+  .then(messages => res.json(messages))
+  .catch(next);
 });
 
 //POST api/channels
