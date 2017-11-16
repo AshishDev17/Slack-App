@@ -17,6 +17,14 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+//PUT api/messages/:messageId
+router.put('/:messageId', (req, res, next) => {
+  Message.findById(+req.params.messageId)
+    .then(message => message.update(req.body))
+    .then(message => res.json(message))
+    .catch(next);
+});
+
 //DELETE api/messages/:messageId
 router.delete('/:messageId', (req, res, next) => {
   const id = req.params.messageId;
