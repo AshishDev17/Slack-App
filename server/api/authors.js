@@ -16,3 +16,16 @@ router.post('/', (req, res, next) => {
     .then(author => res.json(author))
     .catch(next);
 });
+
+//DELETE api/auhtors/:authorId
+router.delete('/:authorId', (req, res, next) => {
+  const id = req.params.authorId;
+
+  Author.destroy({
+    where: {
+      id,
+    }
+  })
+  .then(() => res.status(204).end())
+  .catch(next);
+});
