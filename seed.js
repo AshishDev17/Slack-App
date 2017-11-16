@@ -5,38 +5,47 @@ const db = require('./server/db');
 const authors = [
   {
     name: 'Anna',
+    userName: 'anna123',
     image: 'images/girl.jpeg',
   },
   {
     name: 'Helen',
+    userName: 'helen',
     image: 'images/bee.jpeg',
   },
   {
     name: 'Tom',
+    userName: 'tom1',
     image: 'images/crab.jpeg',
   },
   {
     name: 'Sheila',
+    userName: 'sheila',
     image: 'images/mermaid.jpeg',
   },
   {
     name: 'Michael',
+    userName: 'michael123',
     image: 'images/rooster.jpeg',
   },
   {
     name: 'Tess',
+    userName: 'tess',
     image: 'images/tweety.jpeg',
   },
   {
     name: 'Shane',
+    userName: 'shane1',
     image: 'images/minion.jpeg',
   },
   {
     name: 'Janine',
+    userName: 'janine',
     image: 'images/cow.jpeg',
   },
   {
     name: 'John',
+    userName: 'john1',
     image: 'images/clown.jpeg',
   },
 ];

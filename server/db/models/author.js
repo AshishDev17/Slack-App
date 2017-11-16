@@ -6,6 +6,11 @@ const Author = db.define('author', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  userName: {
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: false,
+  },
   image: {
     type: Sequelize.STRING,
   },
